@@ -121,114 +121,115 @@
           </div>
         </div>
       </div>
-        <script>
-          window.onload = function starttime() {
-            time(time1, time2, birthday1, birthday2, "2017/4/27 14:17:41");
-            ptimer = setTimeout(starttime, 1000);
-          };
-          function time(obj1, obj2, bp1, bp2, futimg) {
-            var nowtime = new Date().getTime();
-            var nodetime = new Date(futimg).getTime();
-            var msec = nowtime - nodetime;
-            var time = msec / 1000;
-            var year = parseInt(time / 31536000);
-            var day = parseInt(time / 86400 - year * 365);
-            var hour = parseInt(time / 3600 - year * 365 * 24 - day * 24);
-            var minute = parseInt((time % 3600) / 60);
-            var second = parseInt(time % 60);
-            var annyear = parseInt(new Date().getFullYear() - 2017);
-            var anntime = new Date(new Date().getFullYear() + "/4/27");
-            var nowtimeday = new Date(
-              new Date().getFullYear() +
-                "/" +
-                parseInt(new Date().getMonth() + 1) +
-                "/" +
-                new Date().getDate()
-            );
-            if (anntime > nowtimeday) {
-              var anniversary =
-                "距离我们恋爱" +
-                annyear +
-                "周年纪念日还有" +
-                (anntime - nowtimeday) / 86400000 +
-                "天。";
-            } else if (anntime < nowtimeday) {
-              var anntime = new Date(new Date().getFullYear() + 1 + "/7/27");
-              var annyear = annyear + 1;
-              var anniversary =
-                "距离我们恋爱" +
-                annyear +
-                "周年纪念日<br>还有" +
-                (anntime - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var anniversary = "今天是我们恋爱" + annyear + "周年纪念日!";
-            }
-            
-            obj1.innerHTML =year + "年" + day + "天" + hour + "小时" + minute + "分" + second + "秒";
-            obj2.innerHTML = anniversary;
-
-            var person1 = {
-              2022 : "2022/03/29",
-              2023 : "2023/04/17",
-              2024 : "2024/04/05",
-              2025 : "2025/03/26",
-              2026 : "2026/04/14",
-              2027 : "2027/04/03",
-              2028 : "2028/03/22",
-              2029 : "2029/04/10",
-              2030 : "2030/03/30"
-            }; //Star
-            var person2 = {
-              2022 : "2022/10/12",
-              2023 : "2023/10/31",
-              2024 : "2024/10/19",
-              2025 : "2025/11/06",
-              2026 : "2026/10/26",
-              2027 : "2027/10/16",
-              2028 : "2028/11/03",
-              2029 : "2029/10/24",
-              2030 : "2030/10/13"
-            }; //Wood
-            var baryear = parseInt(new Date().getFullYear());
-            var bard1 =  new Date(person1[baryear]);
-            if (bard1 > nowtimeday) {
-              var barday1 =
-                "距离星星的生日还有" +
-                (bard1 - nowtimeday) / 86400000 +
-                "天。";
-            } else if (bard1 < nowtimeday){
-              var baryear1 = parseInt(new Date().getFullYear() + 1);
-              var bard1 =  new Date(person2[baryear]);
-              var barday1 =
-                "距离星星的生日还有" +
-                (bard1 - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var barday1 = "今天是星星的生日!";
-            }
-
-            var bard2 =  new Date(person2[baryear]);
-            if (bard2 > nowtimeday) {
-              var barday2 =
-                "距离木头的生日还有" +
-                (bard2 - nowtimeday) / 86400000 +
-                "天。";
-            } else if (bard2 < nowtimeday){
-              var baryear2 = parseInt(new Date().getFullYear() + 1);
-              var bard2 =  new Date(person2[baryear]);
-              var barday2 =
-                "距离木头的生日还有" +
-                (bard2 - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var barday2 = "今天是木头的生日!";
-            }
-
-            bp1.innerHTML = barday1;
-            bp2.innerHTML = barday2;
+      <script>
+        window.onload = function starttime() {
+          time(time1, time2, birthday1, birthday2, "2017/4/27 14:17:41");
+          ptimer = setTimeout(starttime, 1000);
+        };
+        function time(obj1, obj2, bp1, bp2, futimg) {
+          var nowtime = new Date().getTime();
+          var nodetime = new Date(futimg).getTime();
+          var msec = nowtime - nodetime;
+          var time = msec / 1000;
+          var year = parseInt(time / 31536000);
+          var day = parseInt(time / 86400 - year * 365);
+          var hour = parseInt(time / 3600 - year * 365 * 24 - day * 24);
+          var minute = parseInt((time % 3600) / 60);
+          var second = parseInt(time % 60);
+          var annyear = parseInt(new Date().getFullYear() - 2017);
+          var anntime = new Date(new Date().getFullYear() + "/4/27");
+          var nowtimeday = new Date(
+            new Date().getFullYear() +
+              "/" +
+              parseInt(new Date().getMonth() + 1) +
+              "/" +
+              new Date().getDate()
+          );
+          if (anntime > nowtimeday) {
+            var anniversary =
+              "距离我们恋爱" +
+              annyear +
+              "周年纪念日还有" +
+              (anntime - nowtimeday) / 86400000 +
+              "天。";
+          } else if (anntime < nowtimeday) {
+            var anntime = new Date(new Date().getFullYear() + 1 + "/4/27");
+            var annyear = annyear + 1;
+            var anniversary =
+              "距离我们恋爱" +
+              annyear +
+              "周年纪念日<br>还有" +
+              (anntime - nowtimeday) / 86400000 +
+              "天。";
+          } else {
+            var anniversary = "今天是我们恋爱" + annyear + "周年纪念日!";
           }
-        </script>
+          
+          obj1.innerHTML =year + "年" + day + "天" + hour + "小时" + minute + "分" + second + "秒";
+          obj2.innerHTML = anniversary;
+
+          var person1 = {
+            2022 : "2022/03/29",
+            2023 : "2023/03/18",
+            2024 : "2024/04/05",
+            2025 : "2025/03/26",
+            2026 : "2026/04/14",
+            2027 : "2027/04/03",
+            2028 : "2028/03/22",
+            2029 : "2029/04/10",
+            2030 : "2030/03/30"
+          }; //Star
+          var person2 = {
+            2022 : "2022/10/12",
+            2023 : "2023/10/31",
+            2024 : "2024/10/19",
+            2025 : "2025/11/06",
+            2026 : "2026/10/26",
+            2027 : "2027/10/16",
+            2028 : "2028/11/03",
+            2029 : "2029/10/24",
+            2030 : "2030/10/13"
+          }; //Wood
+          var baryear1 = parseInt(new Date().getFullYear());
+          var bard1 =  new Date(person1[baryear1]);
+          if (bard1 > nowtimeday) {
+            var barday1 =
+              "距离星星的生日还有" +
+              (bard1 - nowtimeday) / 86400000 +
+              "天。";
+          } else if (bard1 < nowtimeday){
+            var baryear1 = parseInt(new Date().getFullYear() + 1);
+            var bard1 =  new Date(person1[baryear1]);
+            var barday1 =
+              "距离星星的生日还有" +
+              (bard1 - nowtimeday) / 86400000 +
+              "天。";
+          } else {
+            var barday1 = "今天是星星的生日!";
+          }
+
+          var baryear2 = parseInt(new Date().getFullYear());
+          var bard2 =  new Date(person2[baryear2]);
+          if (bard2 > nowtimeday) {
+            var barday2 =
+              "距离木头的生日还有" +
+              (bard2 - nowtimeday) / 86400000 +
+              "天。";
+          } else if (bard2 < nowtimeday){
+            var baryear2 = parseInt(new Date().getFullYear() + 1);
+            var bard2 =  new Date(person2[baryear2]);
+            var barday2 =
+              "距离木头的生日还有" +
+              (bard2 - nowtimeday) / 86400000 +
+              "天。";
+          } else {
+            var barday2 = "今天是木头的生日!";
+          }
+
+          bp1.innerHTML = barday1;
+          bp2.innerHTML = barday2;
+        }
+      </script>
         <div class="footer SCJSKK">Copyright © 2022-2023 世佳</div>
         <div>&ensp;</div>
      </div> 
