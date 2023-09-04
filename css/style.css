@@ -4,13 +4,8 @@
 }
 
 @font-face {
-    font-family: OPPOSans;
-    src: url("../fonts/OPPOSans.ttf") format("truetype");
-}
-
-@font-face {
     font-family: OPPOSans-B;
-    src: url("../fonts/OPPOSans-B.ttf") format("truetype");
+    src: url("../fonts/OPPOSans-B.min.ttf") format("truetype");
 }
 
 /* Fonts */
@@ -28,11 +23,6 @@ body {
 .oppo-b {
     font-family: "OPPOSans-B";
 }
-
-.oppo {
-    font-family: "OPPOSans";
-}
-
 
 /* Scroll bar */
 *::-webkit-scrollbar {width: 5px;height: 5px;}
