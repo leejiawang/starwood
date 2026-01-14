@@ -8,15 +8,13 @@
     <title>Starwood</title>
     <link rel="stylesheet" href="css/reset.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <script src="https://s1.pstatp.com/cdn/expire-1-M/jquery/1.10.2/jquery.min.js"></script>
-    <!--[if IE]>
-      <script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
-    <![endif]-->
-  </head>
+    <script src="js/lunar.min.js"></script>
+    
+    </head>
   <body>
     <header class="header">
       <nav class="nav">
-        <a class="site-logo" >
+        <a class="site-logo">
           <img src="/img/starwood_r.svg">
         </a>
       </nav>
@@ -26,194 +24,148 @@
       <div class="card-grid"> 
         <div class="cards-4">
             <div class="SCJSKK title">
-              我们已经在一起</br><span id="time1"></span>。
+              我们已经在一起</br><span id="main-timer-text"></span>
             </div>
             <div class="SCJSKK title-info">
-              *相当于<span id="timed"></span>，或者说是<span id="timeh"></span>、<span id="timem"></span>以及<span id="times"></span>。
+              *相当于<span id="total-days"></span>，或者说是<span id="total-hours"></span>、<span id="total-minutes"></span>以及<span id="total-seconds"></span>。
             </div>
 
           <div class="info_items">
-            <svg t="1677398016066" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1783" width="48" height="48">
-              <path d="M603.12 461.89c-34.99 20.8-70.85-22.8-104.76-19.46l-0.11 0.15c16.15 86.94-82.93 152.26-160.85 117.41-101.74-45.52-67.82-209.53 42.45-212.38 50.97-53.7 159.24-33.97 139.51-53.28-112.94-91.19-291.02-40.21-339.67 97.32-49.17 139 54.95 327.18 84.07 375.61a17.11 17.11 0 0 0 20.4 7.31c31.95-11.34 114.55-43.1 169.46-81.34 79.71-50.42 153.89-132.03 149.49-231.34z" p-id="1784" fill="#ec3b5b"></path><path d="M832.28 350.29c-61.98-102.31-214.61-104.54-274.37 2.42-107.19-41.16-218.88 45.58-213.31 157.19 16.88 14.91 41.86 19.85 63.13 12.5-15.53-87.48 73.06-150.5 153.97-100.64 15.85 8.75 34.77-0.78 39.32-17.81 59.13-148.3 286.24-45.82 153.95 156.79-30.97 50.71-46.72 69.45-72.23 102.68-4.84 6.3-12.95 9.26-20.7 7.55-29.26-6.47-52.31-10.9-86.28-21.06-15.53 17.42-32.75 33.49-50.9 48.18 68.71 22.95 100.37 26.84 154.25 39.71a32.969 32.969 0 0 0 33.92-12.1c81.44-106.91 195.27-247.95 119.26-375.41z" p-id="1785" fill="#ec3b5b"></path>
+            <svg class="icon" viewBox="0 0 1024 1024" width="48" height="48">
+              <path d="M603.12 461.89c-34.99 20.8-70.85-22.8-104.76-19.46l-0.11 0.15c16.15 86.94-82.93 152.26-160.85 117.41-101.74-45.52-67.82-209.53 42.45-212.38 50.97-53.7 159.24-33.97 139.51-53.28-112.94-91.19-291.02-40.21-339.67 97.32-49.17 139 54.95 327.18 84.07 375.61a17.11 17.11 0 0 0 20.4 7.31c31.95-11.34 114.55-43.1 169.46-81.34 79.71-50.42 153.89-132.03 149.49-231.34z" fill="#ec3b5b"></path><path d="M832.28 350.29c-61.98-102.31-214.61-104.54-274.37 2.42-107.19-41.16-218.88 45.58-213.31 157.19 16.88 14.91 41.86 19.85 63.13 12.5-15.53-87.48 73.06-150.5 153.97-100.64 15.85 8.75 34.77-0.78 39.32-17.81 59.13-148.3 286.24-45.82 153.95 156.79-30.97 50.71-46.72 69.45-72.23 102.68-4.84 6.3-12.95 9.26-20.7 7.55-29.26-6.47-52.31-10.9-86.28-21.06-15.53 17.42-32.75 33.49-50.9 48.18 68.71 22.95 100.37 26.84 154.25 39.71a32.969 32.969 0 0 0 33.92-12.1c81.44-106.91 195.27-247.95 119.26-375.41z" fill="#ec3b5b"></path>
             </svg>
-              <div id="time2" class="anntime SCJSKK"></div>
+              <div id="anniversary-love" class="anntime SCJSKK"></div>
           </div>
 
           <div class="info_items">
-            <svg t="1677398016066" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1783" width="48" height="48">
-              <path d="M603.12 461.89c-34.99 20.8-70.85-22.8-104.76-19.46l-0.11 0.15c16.15 86.94-82.93 152.26-160.85 117.41-101.74-45.52-67.82-209.53 42.45-212.38 50.97-53.7 159.24-33.97 139.51-53.28-112.94-91.19-291.02-40.21-339.67 97.32-49.17 139 54.95 327.18 84.07 375.61a17.11 17.11 0 0 0 20.4 7.31c31.95-11.34 114.55-43.1 169.46-81.34 79.71-50.42 153.89-132.03 149.49-231.34z" p-id="1784" fill="#ec3b5b"></path><path d="M832.28 350.29c-61.98-102.31-214.61-104.54-274.37 2.42-107.19-41.16-218.88 45.58-213.31 157.19 16.88 14.91 41.86 19.85 63.13 12.5-15.53-87.48 73.06-150.5 153.97-100.64 15.85 8.75 34.77-0.78 39.32-17.81 59.13-148.3 286.24-45.82 153.95 156.79-30.97 50.71-46.72 69.45-72.23 102.68-4.84 6.3-12.95 9.26-20.7 7.55-29.26-6.47-52.31-10.9-86.28-21.06-15.53 17.42-32.75 33.49-50.9 48.18 68.71 22.95 100.37 26.84 154.25 39.71a32.969 32.969 0 0 0 33.92-12.1c81.44-106.91 195.27-247.95 119.26-375.41z" p-id="1785" fill="#ec3b5b"></path>
+            <svg class="icon" viewBox="0 0 1024 1024" width="48" height="48">
+              <path d="M603.12 461.89c-34.99 20.8-70.85-22.8-104.76-19.46l-0.11 0.15c16.15 86.94-82.93 152.26-160.85 117.41-101.74-45.52-67.82-209.53 42.45-212.38 50.97-53.7 159.24-33.97 139.51-53.28-112.94-91.19-291.02-40.21-339.67 97.32-49.17 139 54.95 327.18 84.07 375.61a17.11 17.11 0 0 0 20.4 7.31c31.95-11.34 114.55-43.1 169.46-81.34 79.71-50.42 153.89-132.03 149.49-231.34z" fill="#ec3b5b"></path><path d="M832.28 350.29c-61.98-102.31-214.61-104.54-274.37 2.42-107.19-41.16-218.88 45.58-213.31 157.19 16.88 14.91 41.86 19.85 63.13 12.5-15.53-87.48 73.06-150.5 153.97-100.64 15.85 8.75 34.77-0.78 39.32-17.81 59.13-148.3 286.24-45.82 153.95 156.79-30.97 50.71-46.72 69.45-72.23 102.68-4.84 6.3-12.95 9.26-20.7 7.55-29.26-6.47-52.31-10.9-86.28-21.06-15.53 17.42-32.75 33.49-50.9 48.18 68.71 22.95 100.37 26.84 154.25 39.71a32.969 32.969 0 0 0 33.92-12.1c81.44-106.91 195.27-247.95 119.26-375.41z" fill="#ec3b5b"></path>
             </svg>
-              <div id="time3" class="anntime SCJSKK"></div>
+              <div id="anniversary-marry" class="anntime SCJSKK"></div>
           </div>
           
           <div class="info_items">
-            <svg t="1677382115749" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2190" width="48" height="48">
-              <path d="M832.2 673.9h-34V496.5c0-73.8-56.3-134.6-128.1-141.9l0.1-57.7c0-16.6-13.4-30-30-30-16.5 0-30 13.4-30 30l-0.1 57.1h-68.7v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57h-67.3v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57.8c-71.8 7.4-128 68.2-128 141.9v177.4h-34c-16.6 0-30 13.4-30 30s13.4 30 30 30h59.5a34.013 34.013 0 0 0 9 0h503.1a34.013 34.013 0 0 0 9 0h59.5c16.6 0 30-13.4 30-30s-13.5-30.2-30-30.2zM368.7 413.8h13.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.3c1.1 0.1 2.3 0.2 3.5 0.2 1.2 0 2.4-0.1 3.5-0.2h12c45.6 0 82.7 37.1 82.7 82.7v53.7c-8.2 7.2-19.9 10.9-34.8 10.9-16.1 0-28.3-4.3-36.3-12.7-11.3-12-12-29.7-12-34.3 0.1-1.1 0.1-1.9 0.1-2.2 0-8.1-6.4-14.7-14.5-15-8.1-0.3-14.9 5.9-15.5 14 0 0.2-0.1 0.9-0.1 2-0.2 3.3-1.2 14.6-6.8 25.3-8 15.5-21.8 23-42.2 23-14.8 0-26.4-4-34.3-12-13.7-13.7-13.8-35.5-13.8-35.6v-0.2c0-8.2-6.6-14.9-14.8-15h-0.2c-8.2 0-14.9 6.5-15 14.7 0 0.4-0.5 13.3-7.2 25.5-8.3 15.2-22.3 22.6-42.8 22.6-20.4 0-34.2-7.3-42.2-22.4-6.6-12.3-6.8-25.3-6.8-25.4 0-7.8-5.9-14.3-13.7-15-7.7-0.7-14.7 4.7-16.1 12.3-0.4 2.1-9.7 50.5-50 50.5-15.3 0-26-7.1-33.3-15.9v-48.7c0.2-45.7 37.3-82.8 82.9-82.8zM286 583.3c9.9 5.1 21.1 7.7 33.3 7.7 25.8 0 47.3-11.8 62.4-34.1 10.2 16.7 29.7 34.1 66.3 34.1 34.1 0 53.4-15.1 64.4-30.6 2.2 3.3 4.8 6.5 7.8 9.5 13.8 14 32.6 21.1 55.8 21.1 33 0 52-14.4 63-29.7 1.7 2.5 3.7 4.9 5.9 7.3 13.9 14.8 33.5 22.4 58.3 22.4 13 0 24.7-2.1 34.8-6.2v89H286v-90.5z" fill="#ec3b5b" p-id="2191"></path><path d="M384.1 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b" p-id="2192"></path><path d="M513 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b" p-id="2193"></path><path d="M640 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b" p-id="2194"></path>
+            <svg class="icon" viewBox="0 0 1024 1024" width="48" height="48">
+              <path d="M832.2 673.9h-34V496.5c0-73.8-56.3-134.6-128.1-141.9l0.1-57.7c0-16.6-13.4-30-30-30-16.5 0-30 13.4-30 30l-0.1 57.1h-68.7v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57h-67.3v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57.8c-71.8 7.4-128 68.2-128 141.9v177.4h-34c-16.6 0-30 13.4-30 30s13.4 30 30 30h59.5a34.013 34.013 0 0 0 9 0h503.1a34.013 34.013 0 0 0 9 0h59.5c16.6 0 30-13.4 30-30s-13.5-30.2-30-30.2zM368.7 413.8h13.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.3c1.1 0.1 2.3 0.2 3.5 0.2 1.2 0 2.4-0.1 3.5-0.2h12c45.6 0 82.7 37.1 82.7 82.7v53.7c-8.2 7.2-19.9 10.9-34.8 10.9-16.1 0-28.3-4.3-36.3-12.7-11.3-12-12-29.7-12-34.3 0.1-1.1 0.1-1.9 0.1-2.2 0-8.1-6.4-14.7-14.5-15-8.1-0.3-14.9 5.9-15.5 14 0 0.2-0.1 0.9-0.1 2-0.2 3.3-1.2 14.6-6.8 25.3-8 15.5-21.8 23-42.2 23-14.8 0-26.4-4-34.3-12-13.7-13.7-13.8-35.5-13.8-35.6v-0.2c0-8.2-6.6-14.9-14.8-15h-0.2c-8.2 0-14.9 6.5-15 14.7 0 0.4-0.5 13.3-7.2 25.5-8.3 15.2-22.3 22.6-42.8 22.6-20.4 0-34.2-7.3-42.2-22.4-6.6-12.3-6.8-25.3-6.8-25.4 0-7.8-5.9-14.3-13.7-15-7.7-0.7-14.7 4.7-16.1 12.3-0.4 2.1-9.7 50.5-50 50.5-15.3 0-26-7.1-33.3-15.9v-48.7c0.2-45.7 37.3-82.8 82.9-82.8zM286 583.3c9.9 5.1 21.1 7.7 33.3 7.7 25.8 0 47.3-11.8 62.4-34.1 10.2 16.7 29.7 34.1 66.3 34.1 34.1 0 53.4-15.1 64.4-30.6 2.2 3.3 4.8 6.5 7.8 9.5 13.8 14 32.6 21.1 55.8 21.1 33 0 52-14.4 63-29.7 1.7 2.5 3.7 4.9 5.9 7.3 13.9 14.8 33.5 22.4 58.3 22.4 13 0 24.7-2.1 34.8-6.2v89H286v-90.5z" fill="#ec3b5b"></path><path d="M384.1 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b"></path><path d="M513 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b"></path><path d="M640 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b"></path>
             </svg>
-              <div class="anntime SCJSKK">
-                <div id="birthday1"></div>
-              </div>
+              <div id="birthday-star" class="anntime SCJSKK"></div>
           </div>
 
           <div class="info_items">   
-            <svg t="1677382115749" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2190" width="48" height="48">
-              <path d="M832.2 673.9h-34V496.5c0-73.8-56.3-134.6-128.1-141.9l0.1-57.7c0-16.6-13.4-30-30-30-16.5 0-30 13.4-30 30l-0.1 57.1h-68.7v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57h-67.3v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57.8c-71.8 7.4-128 68.2-128 141.9v177.4h-34c-16.6 0-30 13.4-30 30s13.4 30 30 30h59.5a34.013 34.013 0 0 0 9 0h503.1a34.013 34.013 0 0 0 9 0h59.5c16.6 0 30-13.4 30-30s-13.5-30.2-30-30.2zM368.7 413.8h13.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.3c1.1 0.1 2.3 0.2 3.5 0.2 1.2 0 2.4-0.1 3.5-0.2h12c45.6 0 82.7 37.1 82.7 82.7v53.7c-8.2 7.2-19.9 10.9-34.8 10.9-16.1 0-28.3-4.3-36.3-12.7-11.3-12-12-29.7-12-34.3 0.1-1.1 0.1-1.9 0.1-2.2 0-8.1-6.4-14.7-14.5-15-8.1-0.3-14.9 5.9-15.5 14 0 0.2-0.1 0.9-0.1 2-0.2 3.3-1.2 14.6-6.8 25.3-8 15.5-21.8 23-42.2 23-14.8 0-26.4-4-34.3-12-13.7-13.7-13.8-35.5-13.8-35.6v-0.2c0-8.2-6.6-14.9-14.8-15h-0.2c-8.2 0-14.9 6.5-15 14.7 0 0.4-0.5 13.3-7.2 25.5-8.3 15.2-22.3 22.6-42.8 22.6-20.4 0-34.2-7.3-42.2-22.4-6.6-12.3-6.8-25.3-6.8-25.4 0-7.8-5.9-14.3-13.7-15-7.7-0.7-14.7 4.7-16.1 12.3-0.4 2.1-9.7 50.5-50 50.5-15.3 0-26-7.1-33.3-15.9v-48.7c0.2-45.7 37.3-82.8 82.9-82.8zM286 583.3c9.9 5.1 21.1 7.7 33.3 7.7 25.8 0 47.3-11.8 62.4-34.1 10.2 16.7 29.7 34.1 66.3 34.1 34.1 0 53.4-15.1 64.4-30.6 2.2 3.3 4.8 6.5 7.8 9.5 13.8 14 32.6 21.1 55.8 21.1 33 0 52-14.4 63-29.7 1.7 2.5 3.7 4.9 5.9 7.3 13.9 14.8 33.5 22.4 58.3 22.4 13 0 24.7-2.1 34.8-6.2v89H286v-90.5z" fill="#ec3b5b" p-id="2191"></path><path d="M384.1 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b" p-id="2192"></path><path d="M513 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b" p-id="2193"></path><path d="M640 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b" p-id="2194"></path>
+            <svg class="icon" viewBox="0 0 1024 1024" width="48" height="48">
+              <path d="M832.2 673.9h-34V496.5c0-73.8-56.3-134.6-128.1-141.9l0.1-57.7c0-16.6-13.4-30-30-30-16.5 0-30 13.4-30 30l-0.1 57.1h-68.7v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57h-67.3v-57c0-16.6-13.4-30-30-30s-30 13.4-30 30v57.8c-71.8 7.4-128 68.2-128 141.9v177.4h-34c-16.6 0-30 13.4-30 30s13.4 30 30 30h59.5a34.013 34.013 0 0 0 9 0h503.1a34.013 34.013 0 0 0 9 0h59.5c16.6 0 30-13.4 30-30s-13.5-30.2-30-30.2zM368.7 413.8h13.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.4c0.6 0 1.3 0.1 1.9 0.1s1.3 0 1.9-0.1h123.3c1.1 0.1 2.3 0.2 3.5 0.2 1.2 0 2.4-0.1 3.5-0.2h12c45.6 0 82.7 37.1 82.7 82.7v53.7c-8.2 7.2-19.9 10.9-34.8 10.9-16.1 0-28.3-4.3-36.3-12.7-11.3-12-12-29.7-12-34.3 0.1-1.1 0.1-1.9 0.1-2.2 0-8.1-6.4-14.7-14.5-15-8.1-0.3-14.9 5.9-15.5 14 0 0.2-0.1 0.9-0.1 2-0.2 3.3-1.2 14.6-6.8 25.3-8 15.5-21.8 23-42.2 23-14.8 0-26.4-4-34.3-12-13.7-13.7-13.8-35.5-13.8-35.6v-0.2c0-8.2-6.6-14.9-14.8-15h-0.2c-8.2 0-14.9 6.5-15 14.7 0 0.4-0.5 13.3-7.2 25.5-8.3 15.2-22.3 22.6-42.8 22.6-20.4 0-34.2-7.3-42.2-22.4-6.6-12.3-6.8-25.3-6.8-25.4 0-7.8-5.9-14.3-13.7-15-7.7-0.7-14.7 4.7-16.1 12.3-0.4 2.1-9.7 50.5-50 50.5-15.3 0-26-7.1-33.3-15.9v-48.7c0.2-45.7 37.3-82.8 82.9-82.8zM286 583.3c9.9 5.1 21.1 7.7 33.3 7.7 25.8 0 47.3-11.8 62.4-34.1 10.2 16.7 29.7 34.1 66.3 34.1 34.1 0 53.4-15.1 64.4-30.6 2.2 3.3 4.8 6.5 7.8 9.5 13.8 14 32.6 21.1 55.8 21.1 33 0 52-14.4 63-29.7 1.7 2.5 3.7 4.9 5.9 7.3 13.9 14.8 33.5 22.4 58.3 22.4 13 0 24.7-2.1 34.8-6.2v89H286v-90.5z" fill="#ec3b5b"></path><path d="M384.1 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b"></path><path d="M513 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b"></path><path d="M640 223.1m-30 0a30 30 0 1 0 60 0 30 30 0 1 0-60 0Z" fill="#ec3b5b"></path>
             </svg>
-            <div class="anntime SCJSKK">
-              <div id="birthday2"></div>
-            </div>
+            <div id="birthday-wood" class="anntime SCJSKK"></div>
           </div>
         </div>
-
       </div>
 
-        <script>
-          window.onload = function starttime() {
-            time(time1, time2, time3, timed, timeh, timem, times, birthday1, birthday2, "2017/4/27 14:17:41");
-            ptimer = setTimeout(starttime, 1000);
-          };
-          function time(obj1, obj2, obj3, obj4, obj5, obj6, obj7, bp1, bp2, futimg) {
-            var nowtime = new Date().getTime();
-            var nodetime = new Date(futimg).getTime();
-            var msec = nowtime - nodetime;
-            var time = msec / 1000;
-            var tday = parseInt(time / 86400);
-            var thour = parseInt(time / 3600);
-            var tminute = parseInt(time / 60);
-            var tsecond = parseInt(time);
-            var year = parseInt(time / 31536000);
-            var day = parseInt(time / 86400 - year * 365);
-            var hour = parseInt(time / 3600 - year * 365 * 24 - day * 24);
-            var minute = parseInt((time % 3600) / 60);
-            var second = parseInt(time % 60);
-            var annyear1 = parseInt(new Date().getFullYear() - 2017);
-            var anntime1 = new Date(new Date().getFullYear() + "/4/27");
-            var annyear2 = parseInt(new Date().getFullYear() - 2024);
-            var anntime2 = new Date(new Date().getFullYear() + "/2/1");
-            var nowtimeday = new Date(
-              new Date().getFullYear() +
-                "/" +
-                parseInt(new Date().getMonth() + 1) +
-                "/" +
-                new Date().getDate()
-            );
-
-            // 念爱纪念日
-            if (anntime1 > nowtimeday) {
-              var anniversary1 =
-                "距离我们恋爱" +
-                annyear1 +
-                "周年纪念日还有" +
-                (anntime1 - nowtimeday) / 86400000 +
-                "天。";
-            } else if (anntime1 < nowtimeday) {
-              var anntime1 = new Date(new Date().getFullYear() + 1 + "/4/27");
-              var annyear1 = annyear1 + 1;
-              var anniversary1 =
-                "距离我们恋爱" +
-                annyear1 +
-                "周年纪念日<br>还有" +
-                (anntime1 - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var anniversary1 = "今天是我们恋爱" + annyear1 + "周年纪念日!";
-            }
-
-            // 结婚纪念日
-            if (anntime2 > nowtimeday) {
-              var anniversary2 =
-                "距离我们结婚" +
-                annyear2 +
-                "周年纪念日还有" +
-                (anntime2 - nowtimeday) / 86400000 +
-                "天。";
-            } else if (anntime2 < nowtimeday) {
-              var anntime2 = new Date(new Date().getFullYear() + 1 + "/2/1");
-              var annyear2 = annyear2 + 1;
-              var anniversary2 =
-                "距离我们结婚" +
-                annyear2 +
-                "周年纪念日<br>还有" +
-                (anntime2 - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var anniversary2 = "今天是我们结婚" + annyear2 + "周年纪念日!";
-            }
-
-            obj1.innerHTML =year + "年" + day + "天" + hour + "小时" + minute + "分" + second + "秒";
-            obj2.innerHTML = anniversary1;
-            obj3.innerHTML = anniversary2;
-            obj4.innerHTML = tday + " 天";
-            obj5.innerHTML = thour + " 小时";
-            obj6.innerHTML = tminute + " 分";
-            obj7.innerHTML = tsecond + " 秒";
-
-            var person1 = {
-              2022 : "2022/03/29",
-              2023 : "2023/03/18",
-              2024 : "2024/04/05",
-              2025 : "2025/03/26",
-              2026 : "2026/04/14",
-              2027 : "2027/04/03",
-              2028 : "2028/03/22",
-              2029 : "2029/04/10",
-              2030 : "2030/03/30"
-            }; //Star
-            var person2 = {
-              2022 : "2022/10/12",
-              2023 : "2023/10/31",
-              2024 : "2024/10/19",
-              2025 : "2025/11/06",
-              2026 : "2026/10/26",
-              2027 : "2027/10/16",
-              2028 : "2028/11/03",
-              2029 : "2029/10/24",
-              2030 : "2030/10/13"
-            }; //Wood
-            var baryear1 = parseInt(new Date().getFullYear());
-            var bard1 =  new Date(person1[baryear1]);
-            if (bard1 > nowtimeday) {
-              var barday1 =
-                "距离星星的生日还有" +
-                (bard1 - nowtimeday) / 86400000 +
-                "天。";
-            } else if (bard1 < nowtimeday){
-              var baryear1 = parseInt(new Date().getFullYear() + 1);
-              var bard1 =  new Date(person1[baryear1]);
-              var barday1 =
-                "距离星星的生日还有" +
-                (bard1 - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var barday1 = "今天是星星的生日!";
-            }
-
-            var baryear2 = parseInt(new Date().getFullYear());
-            var bard2 =  new Date(person2[baryear2]);
-            if (bard2 > nowtimeday) {
-              var barday2 =
-                "距离木头的生日还有" +
-                (bard2 - nowtimeday) / 86400000 +
-                "天。";
-            } else if (bard2 < nowtimeday){
-              var baryear2 = parseInt(new Date().getFullYear() + 1);
-              var bard2 =  new Date(person2[baryear2]);
-              var barday2 =
-                "距离木头的生日还有" +
-                (bard2 - nowtimeday) / 86400000 +
-                "天。";
-            } else {
-              var barday2 = "今天是木头的生日!";
-            }
-
-            bp1.innerHTML = barday1;
-            bp2.innerHTML = barday2;
-          }
-        </script>
-
-        <div class="footer SCJSKK">Copyright © 2022-2024 世佳</div>
-        <div>&ensp;</div>
+      <div class="footer SCJSKK">Copyright © 2017-2026 世佳</div>
+      <div>&ensp;</div>
     </div> 
 
+    <script>
+
+      const CONFIG = {
+          loveStartDate: "2017/04/27 14:17:41",
+          marriageDate: "2024/02/01", 
+          
+          birthdays: {
+              star: { 
+                  type: 'lunar',
+                  month: 2,
+                  day: 29
+              },
+              wood: { 
+                  type: 'lunar', 
+                  month: 9,
+                  day: 15
+              }
+          }
+      };
+
+      function updateTimer() {
+          const now = new Date();
+          const start = new Date(CONFIG.loveStartDate);
+          const diff = now - start;
+          
+          const days = Math.floor(diff / 86400000);
+          const years = Math.floor(days / 365);
+          const daysRemainder = days % 365;
+          const hours = Math.floor((diff % 86400000) / 3600000);
+          const minutes = Math.floor((diff % 3600000) / 60000);
+          const seconds = Math.floor((diff % 60000) / 1000);
+
+          document.getElementById('main-timer-text').innerHTML = `${years}年${daysRemainder}天${hours}时${minutes}分${seconds}秒。`;
+          
+          document.getElementById('total-days').innerText = `${days} 天`;
+          document.getElementById('total-hours').innerText = `${Math.floor(diff / 3600000)} 小时`;
+          document.getElementById('total-minutes').innerText = `${Math.floor(diff / 60000)} 分`;
+          document.getElementById('total-seconds').innerText = `${Math.floor(diff / 1000)} 秒`;
+
+          updateAnniversary("love", CONFIG.loveStartDate, "恋爱");
+          updateAnniversary("marry", CONFIG.marriageDate, "结婚");
+          updateBirthdays(now);
+      }
+
+      function updateAnniversary(type, dateStr, label) {
+          const now = new Date();
+          const originalDate = new Date(dateStr);
+          let targetDate = new Date(now.getFullYear(), originalDate.getMonth(), originalDate.getDate());
+          
+          if (now > targetDate) targetDate.setFullYear(now.getFullYear() + 1);
+
+          const diffDays = Math.ceil((targetDate - now) / 86400000);
+          const anniversaryYear = targetDate.getFullYear() - originalDate.getFullYear();
+
+          const text = diffDays === 0 
+              ? `今天是我们${label}${anniversaryYear}周年纪念日!` 
+              : `距离我们${label}${anniversaryYear}周年纪念日还有${diffDays}天。`;
+          document.getElementById(`anniversary-${type}`).innerHTML = text;
+      }
+
+      function updateBirthdays(now) {
+          function getBirthdayText(personKey, name) {
+              const setting = CONFIG.birthdays[personKey];
+              let targetDate;
+
+              if (setting.type === 'lunar') {
+                  const currentYear = now.getFullYear();
+                  let lunar = Lunar.fromYmd(currentYear, setting.month, setting.day);
+                  let solar = lunar.getSolar();
+                  targetDate = new Date(solar.getYear(), solar.getMonth() - 1, solar.getDay());
+
+                  if (now > targetDate) {
+                      lunar = Lunar.fromYmd(currentYear + 1, setting.month, setting.day);
+                      solar = lunar.getSolar();
+                      targetDate = new Date(solar.getYear(), solar.getMonth() - 1, solar.getDay());
+                  }
+              } else {
+                  targetDate = new Date(now.getFullYear(), setting.month - 1, setting.day);
+                  if (now > targetDate) {
+                      targetDate.setFullYear(now.getFullYear() + 1);
+                  }
+              }
+
+              const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+              const targetDay = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+
+              if (today.getTime() === targetDay.getTime()) {
+                  return `今天是${name}的生日!`;
+              } else {
+                  const diffDays = Math.ceil((targetDay - today) / 86400000);
+                  return `距离${name}的生日还有${diffDays}天。`;
+              }
+          }
+
+          document.getElementById('birthday-star').innerHTML = getBirthdayText('star', '星星');
+          document.getElementById('birthday-wood').innerHTML = getBirthdayText('wood', '木头');
+      }
+
+      window.onload = function() {
+          updateTimer(); 
+          setInterval(updateTimer, 1000);
+      };
+  </script>
   </body>
 </html>
