@@ -24,11 +24,7 @@
       <div class="card-grid"> 
         <div class="cards-4">
             <div class="SCJSKK title">
-<<<<<<< HEAD
               我们已经在一起</br><span id="main-timer-text"></span>
-=======
-              我们已经在一起</br><span id="main-timer-text">计算中...</span>
->>>>>>> e99826d14789bef1380b851dde2f37cc91222c8a
             </div>
             <div class="SCJSKK title-info">
               *相当于<span id="total-days"></span>，或者说是<span id="total-hours"></span>、<span id="total-minutes"></span>以及<span id="total-seconds"></span>。
@@ -100,11 +96,7 @@
           const minutes = Math.floor((diff % 3600000) / 60000);
           const seconds = Math.floor((diff % 60000) / 1000);
 
-<<<<<<< HEAD
           document.getElementById('main-timer-text').innerHTML = `${years}年${daysRemainder}天${hours}时${minutes}分${seconds}秒。`;
-=======
-          document.getElementById('main-timer-text').innerHTML = `${years}年${daysRemainder}天${hours}小时${minutes}分${seconds}秒`;
->>>>>>> e99826d14789bef1380b851dde2f37cc91222c8a
           
           document.getElementById('total-days').innerText = `${days} 天`;
           document.getElementById('total-hours').innerText = `${Math.floor(diff / 3600000)} 小时`;
