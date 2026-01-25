@@ -1,317 +1,60 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
     <title>Starwood</title>
-    
     <link rel="preload" href="fonts/SCJSKK.ttf" as="font" type="font/ttf" crossorigin>
-
-    <style>
-      @font-face {
-          font-family: SCJSKK;
-          src: url("fonts/SCJSKK.ttf") format("truetype");
-          font-display: swap; 
-      }
-
-      html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-          margin: 0;
-          padding: 0;
-          border: 0;
-          font-size: 100%;
-          font: inherit;
-          vertical-align: baseline;
-      }
-
-      /* Fonts */
-      body {
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
-          font-size: 17px;
-          background: #f4f6f8;
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          overflow-x: hidden;
-      }
-
-      .SCJSKK { font-family: "SCJSKK", sans-serif; }
-
-      /* Scroll bar */
-      ::-webkit-scrollbar {width: 5px;height: 5px;}
-      ::-webkit-scrollbar-thumb {border-radius: 1px; background: #BABABA;}
-      ::-webkit-scrollbar-track {border-radius: 0px; background: none;}
-
-      ::selection { color: #1d1d1f; background-color: #ddd; text-shadow: none; }
-      *:focus { outline: none; }
-
-      html {
-          user-select: none;
-          cursor: default;
-      }
-
-      a { text-decoration: none; color: #7d7d7d; }
-
-      .main {
-          max-width: 1030px;
-          width: 100%;
-          margin: 0 auto;
-          border-top: 3px #ec3b5b solid;
-          flex: 1;
-          position: relative;
-          z-index: 1;
-      }
-
-      svg {
-        padding: 5px;
-      }
-
-      /* Header */
-      .header { width: 100%; z-index: 20; }
-      .nav { text-align: center; height: 150px; position: relative; } 
-      
-      .site-logo { z-index: 100; position: absolute; left: 50%; transform: translateX(-50%); top: 15px; }
-      .site-logo img { width: 100px; height: auto; display: block; }
-
-      .title { font-size: 2.2rem; margin: 20px 10px; text-align: left; color: #333; }
-      .title-info { font-size: 1.3rem; margin: 20px 20px; color: #988f92; text-align: left; }
-
-      .info_items {
-          background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
-          border: none;
-          box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
-          border-radius: 8px;
-          transition: box-shadow 0.3s ease;
-          margin: 5px 10px 15px 10px;
-          width: 88%;
-          min-width: 150px;
-          max-width: 500px;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          padding: 10px;
-          text-align: left;
-      }
-
-      .info_items:hover {
-          box-shadow: 5px 15px 25px rgba(0,0,0,0.2);
-      }
-
-      .anntime { color: #ec3b5b; font-size: 1.4rem; padding: 5px 10px; padding-bottom: 10px; }
-
-      .card-grid {
-          display: flex;
-          justify-content: space-around;
-          flex-direction: row;
-          flex-wrap: wrap; 
-          margin: 20px 5px;
-      }
-
-      .cards-4 {
-          border-radius: 10px;
-          margin: 3px;
-          width: 100%;
-          min-width: 280px;
-          max-width: 38%;
-          position: relative;
-          display: inline-block;
-          vertical-align: top;
-          text-align: left;
-      }
-
-      .icon { display: block; fill: #ec3b5b; }
-
-      .footer {
-          text-align: center;
-          color: #000;
-          font-size: 20px;
-          margin: 0;
-          padding: 10px 10px;
-      }
-
-      /* Media Queries */
-      @media (max-width: 1012px) {
-          .anntime { font-size: 1.4rem; }
-      }
-
-      @media (max-width: 768px) {
-          .cards-4 { max-width: 100%; display: block; }
-          .site-logo img { margin: 0; }
-      }
-
-      @media (max-width: 544px) {
-          .info_items { max-width: 500px; }
-      }
-    </style>
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <svg style="display: none;">
-        <symbol id="icon-heart" viewBox="0 0 1024 1024"><path d="M821.034667 202.965333a255.914667 255.914667 0 0 1 70.4 229.546667c24.234667 6.826667 47.189333 19.754667 66.304 38.741333a151.466667 151.466667 0 0 1 0 215.338667L725.333333 917.333333l-128.938666-128L469.333333 916.693333 107.52 554.368a256 256 0 0 1 361.813333-361.130667 255.914667 255.914667 0 0 1 351.658667 9.728z m-267.989334 328.874667a66.133333 66.133333 0 0 0 0 94.208L725.333333 797.098667l172.288-171.050667a66.133333 66.133333 0 0 0 0-94.208 68.864 68.864 0 0 0-96.768 0.085333l-75.605333 74.837334-60.032-59.562667-15.488-15.36a68.821333 68.821333 0 0 0-96.682667 0z m-375.04-268.501333a170.666667 170.666667 0 0 0-8.192 232.576L469.333333 795.904l66.517334-66.645333-42.922667-42.666667a151.466667 151.466667 0 0 1 0-215.338667 154.197333 154.197333 0 0 1 216.917333 0l15.488 15.36 15.488-15.36a152.917333 152.917333 0 0 1 62.506667-37.632 170.794667 170.794667 0 0 0-42.709333-170.368 170.581333 170.581333 0 0 0-234.24-6.528l-56.96 51.114667-57.002667-51.072a170.666667 170.666667 0 0 0-234.410667 6.570667z" fill="#ec3b5b"></path></symbol>
-        <symbol id="icon-cake" viewBox="0 0 1024 1024"><path d="M341.333333 256v170.624h128V256h85.333334v170.624h128V256h85.333333v170.624L810.666667 426.666667a128 128 0 0 1 127.786666 120.490666L938.666667 554.666667v42.666666c0 43.264-16.085333 82.773333-42.624 112.853334L896 896a42.666667 42.666667 0 0 1-42.666667 42.666667H170.666667a42.666667 42.666667 0 0 1-42.666667-42.666667v-186.026667a171.690667 171.690667 0 0 1-41.472-93.098666l-0.938667-10.794667L85.333333 597.333333v-42.666666a128 128 0 0 1 120.490667-127.786667L213.333333 426.666667l42.666667-0.042667V256h85.333333z m42.752 454.016l-2.304 2.688a170.410667 170.410667 0 0 1-107.264 54.314667l-9.813333 0.768L256 768c-14.72 0-29.013333-1.877333-42.666667-5.376V853.333333h597.333334v-90.709333a170.965333 170.965333 0 0 1-159.744-41.088l-6.4-6.4-4.522667-4.992-4.565333 5.034667a170.24 170.24 0 0 1-104.576 51.797333l-10.325334 0.853333L512 768a169.685333 169.685333 0 0 1-119.338667-48.810667l-6.4-6.698666-2.176-2.474667zM810.666667 512H213.333333a42.666667 42.666667 0 0 0-42.368 37.674667L170.666667 554.666667v41.429333l0.128 6.272A85.333333 85.333333 0 0 0 256 682.666667a85.290667 85.290667 0 0 0 84.48-72.533334l0.64-6.528 0.213333-7.509333c1.536-53.248 77.952-55.168 84.864-5.717333l0.426667 5.717333 0.170667 6.272a85.333333 85.333333 0 0 0 170.325333 1.322667l0.512-12.032c5.290667-49.322667 79.445333-49.322667 84.736 0l0.512 12.032a85.333333 85.333333 0 0 0 170.24 0L853.333333 597.333333v-42.666666a42.666667 42.666667 0 0 0-37.674666-42.368L810.666667 512zM298.666667 42.666667c56.32 37.162667 70.954667 89.088 61.824 123.221333a64 64 0 0 1-123.648-33.109333C249.6 85.418667 298.666667 106.666667 298.666667 42.666667z m213.333333 0c56.32 37.162667 70.954667 89.088 61.824 123.221333a64 64 0 1 1-123.648-33.109333C462.933333 85.418667 512 106.666667 512 42.666667z m213.333333 0c56.32 37.162667 70.954667 89.088 61.824 123.221333a64 64 0 1 1-123.648-33.109333C676.266667 85.418667 725.333333 106.666667 725.333333 42.666667z" fill="#ec3b5b"></path></symbol>
+        <symbol id="icon-heart" viewBox="0 0 1024 1024">
+            <path d="M821.034667 202.965333a255.914667 255.914667 0 0 1 70.4 229.546667c24.234667 6.826667 47.189333 19.754667 66.304 38.741333a151.466667 151.466667 0 0 1 0 215.338667L725.333333 917.333333l-128.938666-128L469.333333 916.693333 107.52 554.368a256 256 0 0 1 361.813333-361.130667 255.914667 255.914667 0 0 1 351.658667 9.728z m-267.989334 328.874667a66.133333 66.133333 0 0 0 0 94.208L725.333333 797.098667l172.288-171.050667a66.133333 66.133333 0 0 0 0-94.208 68.864 68.864 0 0 0-96.768 0.085333l-75.605333 74.837334-60.032-59.562667-15.488-15.36a68.821333 68.821333 0 0 0-96.682667 0z m-375.04-268.501333a170.666667 170.666667 0 0 0-8.192 232.576L469.333333 795.904l66.517334-66.645333-42.922667-42.666667a151.466667 151.466667 0 0 1 0-215.338667 154.197333 154.197333 0 0 1 216.917333 0l15.488 15.36 15.488-15.36a152.917333 152.917333 0 0 1 62.506667-37.632 170.794667 170.794667 0 0 0-42.709333-170.368 170.581333 170.581333 0 0 0-234.24-6.528l-56.96 51.114667-57.002667-51.072a170.666667 170.666667 0 0 0-234.410667 6.570667z"></path>
+        </symbol>
+        <symbol id="icon-cake" viewBox="0 0 1024 1024">
+            <path d="M341.333333 256v170.624h128V256h85.333334v170.624h128V256h85.333333v170.624L810.666667 426.666667a128 128 0 0 1 127.786666 120.490666L938.666667 554.666667v42.666666c0 43.264-16.085333 82.773333-42.624 112.853334L896 896a42.666667 42.666667 0 0 1-42.666667 42.666667H170.666667a42.666667 42.666667 0 0 1-42.666667-42.666667v-186.026667a171.690667 171.690667 0 0 1-41.472-93.098666l-0.938667-10.794667L85.333333 597.333333v-42.666666a128 128 0 0 1 120.490667-127.786667L213.333333 426.666667l42.666667-0.042667V256h85.333333z m42.752 454.016l-2.304 2.688a170.410667 170.410667 0 0 1-107.264 54.314667l-9.813333 0.768L256 768c-14.72 0-29.013333-1.877333-42.666667-5.376V853.333333h597.333334v-90.709333a170.965333 170.965333 0 0 1-159.744-41.088l-6.4-6.4-4.522667-4.992-4.565333 5.034667a170.24 170.24 0 0 1-104.576 51.797333l-10.325334 0.853333L512 768a169.685333 169.685333 0 0 1-119.338667-48.810667l-6.4-6.698666-2.176-2.474667zM810.666667 512H213.333333a42.666667 42.666667 0 0 0-42.368 37.674667L170.666667 554.666667v41.429333l0.128 6.272A85.333333 85.333333 0 0 0 256 682.666667a85.290667 85.290667 0 0 0 84.48-72.533334l0.64-6.528 0.213333-7.509333c1.536-53.248 77.952-55.168 84.864-5.717333l0.426667 5.717333 0.170667 6.272a85.333333 85.333333 0 0 0 170.325333 1.322667l0.512-12.032c5.290667-49.322667 79.445333-49.322667 84.736 0l0.512 12.032a85.333333 85.333333 0 0 0 170.24 0L853.333333 597.333333v-42.666666a42.666667 42.666667 0 0 0-37.674666-42.368L810.666667 512zM298.666667 42.666667c56.32 37.162667 70.954667 89.088 61.824 123.221333a64 64 0 0 1-123.648-33.109333C249.6 85.418667 298.666667 106.666667 298.666667 42.666667z m213.333333 0c56.32 37.162667 70.954667 89.088 61.824 123.221333a64 64 0 1 1-123.648-33.109333C462.933333 85.418667 512 106.666667 512 42.666667z m213.333333 0c56.32 37.162667 70.954667 89.088 61.824 123.221333a64 64 0 1 1-123.648-33.109333C676.266667 85.418667 725.333333 106.666667 725.333333 42.666667z"></path>
+        </symbol>
     </svg>
     <header class="header">
-      <nav class="nav">
-        <a class="site-logo">
-          <img src="img/starwood_r.svg" width="100" height="100" alt="Logo">
-        </a>
-      </nav>
+        <nav class="nav">
+            <a class="site-logo">
+                <img src="img/starwood_r.png" width="100" height="100" alt="Logo">
+            </a>
+        </nav>
     </header>
-
-    <div class="main">    
-      <div class="card-grid"> 
-        <div class="cards-4">
-            <div class="SCJSKK title">
-              我们已经在一起<br><span id="main-timer-text"></span>
-            </div>
-            <div class="SCJSKK title-info">
-              *相当于<span id="total-days"></span>，或者说是<span id="total-hours"></span>、<span id="total-minutes"></span>以及<span id="total-seconds"></span>。
-            </div>
-
-          <div class="info_items">
-            <svg class="icon" width="26" height="26"><use xlink:href="#icon-heart"></use></svg>
-            <div id="anniversary-love" class="anntime SCJSKK"></div>
-          </div>
-
-          <div class="info_items">
-            <svg class="icon" width="26" height="26"><use xlink:href="#icon-heart"></use></svg>
-            <div id="anniversary-marry" class="anntime SCJSKK"></div>
-          </div>
-          
-          <div class="info_items">
-            <svg class="icon" width="26" height="26"><use xlink:href="#icon-cake"></use></svg>
-            <div id="birthday-star" class="anntime SCJSKK"></div>
-          </div>
-
-          <div class="info_items">   
-            <svg class="icon" width="26" height="26"><use xlink:href="#icon-cake"></use></svg>
-            <div id="birthday-wood" class="anntime SCJSKK"></div>
-          </div>
+    <div class="main">
+        <img class="people-img" src="img/starwood_p.png" alt="people">
+        <div class="SCJSKK title">
+            我们已经在一起<br><span id="main-timer-text"></span>
         </div>
-      </div>
-
-      <div class="footer SCJSKK">Copyright © 2017-2026 世佳</div>
-      <div>&ensp;</div>
-    </div> 
-
+        <div class="SCJSKK title-info">
+            *相当于<span id="total-days"></span>，或者说是<span id="total-hours"></span>、<span id="total-minutes"></span>以及<span id="total-seconds"></span>。
+        </div>
+        <div class="card-grid">
+            <div class="cards-4">
+                <div class="info_items">
+                    <svg class="icon" width="26" height="26"><use xlink:href="#icon-heart"></use></svg>
+                    <div id="anniversary-love" class="anntime SCJSKK"></div>
+                </div>
+                <div class="info_items">
+                    <svg class="icon" width="26" height="26"><use xlink:href="#icon-heart"></use></svg>
+                    <div id="anniversary-marry" class="anntime SCJSKK"></div>
+                </div>
+                <div class="info_items">
+                    <svg class="icon" width="26" height="26"><use xlink:href="#icon-cake"></use></svg>
+                    <div id="birthday-star" class="anntime SCJSKK"></div>
+                </div>
+                <div class="info_items">
+                    <svg class="icon" width="26" height="26"><use xlink:href="#icon-cake"></use></svg>
+                    <div id="birthday-wood" class="anntime SCJSKK"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer SCJSKK">© 世佳</div>
+    </div>
     <script src="js/lunar.min.js"></script>
-    <script>
-      const CONFIG = {
-          loveStartDate: "2017/04/27 14:17:41",
-          marriageDate: "2024/02/01", 
-          birthdays: {
-              star: { type: 'lunar', month: 2, day: 27, year: 1997 },
-              wood: { type: 'lunar', month: 9, day: 17, year: 1997 }
-          }
-      };
-
-      const loveStartDate = new Date(CONFIG.loveStartDate);
-      const marriageDate = new Date(CONFIG.marriageDate);
-      const els = {
-          mainTimer: document.getElementById('main-timer-text'),
-          totalDays: document.getElementById('total-days'),
-          totalHours: document.getElementById('total-hours'),
-          totalMinutes: document.getElementById('total-minutes'),
-          totalSeconds: document.getElementById('total-seconds'),
-          annLove: document.getElementById('anniversary-love'),
-          annMarry: document.getElementById('anniversary-marry'),
-          birthStar: document.getElementById('birthday-star'),
-          birthWood: document.getElementById('birthday-wood'),
-          timerBox: document.getElementById('timer-box')
-      };
-
-      let lastDay = null;
-
-      function updateTimer() {
-          const now = new Date();
-          const diff = now - loveStartDate;
-          
-          const days = Math.floor(diff / 86400000);
-          const years = Math.floor(days / 365);
-          const daysRemainder = days % 365;
-          const hours = Math.floor((diff % 86400000) / 3600000);
-          const minutes = Math.floor((diff % 3600000) / 60000);
-          const seconds = Math.floor((diff % 60000) / 1000);
-
-          let timeStr = "";
-          let hasPreceding = false; 
-          let zeroPending = false; 
-
-          function appendUnit(value, unit) {
-              if (value > 0) {
-                  if (hasPreceding && zeroPending) {
-                      timeStr += "零";
-                      zeroPending = false;
-                  }
-                  timeStr += value + unit;
-                  hasPreceding = true; 
-              } else if (hasPreceding) {
-                  zeroPending = true;
-              }
-          }
-
-          appendUnit(years, "年");
-          appendUnit(daysRemainder, "天");
-          appendUnit(hours, "时");
-          appendUnit(minutes, "分");
-          appendUnit(seconds, "秒");
-
-          if (timeStr === "") timeStr = "不到1秒";
-
-          els.mainTimer.innerHTML = timeStr;
-          els.totalDays.innerText = `${days}天`;
-          els.totalHours.innerText = `${Math.floor(diff / 3600000)}小时`;
-          els.totalMinutes.innerText = `${Math.floor(diff / 60000)}分`;
-          els.totalSeconds.innerText = `${Math.floor(diff / 1000)}秒`;
-
-          if (now.getDate() !== lastDay) {
-              updateAnniversary("love", loveStartDate, "恋爱", els.annLove, now);
-              updateAnniversary("marry", marriageDate, "结婚", els.annMarry, now);
-              updateBirthdays(now);
-              lastDay = now.getDate();
-          }
-          
-          if (els.timerBox) els.timerBox.classList.add('loaded');
-      }
-
-      function updateAnniversary(type, originalDate, label, el, now) {
-          let targetDate = new Date(now.getFullYear(), originalDate.getMonth(), originalDate.getDate());
-          if (now > targetDate) targetDate.setFullYear(now.getFullYear() + 1);
-          const diffDays = Math.ceil((targetDate - now) / 86400000);
-          const anniversaryYear = targetDate.getFullYear() - originalDate.getFullYear();
-          const text = diffDays === 0 ? `今天是我们${label}${anniversaryYear}周年纪念日!` : `距离我们${label}${anniversaryYear}周年纪念日还有${diffDays}天。`;
-          el.innerHTML = text;
-      }
-
-      function updateBirthdays(now) {
-          function getBirthdayText(personKey, name) {
-              const setting = CONFIG.birthdays[personKey];
-              let targetDate;
-              if (setting.type === 'lunar') {
-                  const currentYear = now.getFullYear();
-                  let lunar = Lunar.fromYmd(currentYear, setting.month, setting.day);
-                  let solar = lunar.getSolar();
-                  targetDate = new Date(solar.getYear(), solar.getMonth() - 1, solar.getDay());
-                  if (now > targetDate) {
-                      lunar = Lunar.fromYmd(currentYear + 1, setting.month, setting.day);
-                      solar = lunar.getSolar();
-                      targetDate = new Date(solar.getYear(), solar.getMonth() - 1, solar.getDay());
-                  }
-              } else {
-                  targetDate = new Date(now.getFullYear(), setting.month - 1, setting.day);
-                  if (now > targetDate) targetDate.setFullYear(now.getFullYear() + 1);
-              }
-              const age = targetDate.getFullYear() - setting.year;
-              const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-              const targetDay = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-              if (today.getTime() === targetDay.getTime()) return `今天是${name}的${age}岁生日!`;
-              else return `距离${name}的${age}岁生日还有${Math.ceil((targetDay - today) / 86400000)}天。`;
-          }
-          els.birthStar.innerHTML = getBirthdayText('star', '星星');
-          els.birthWood.innerHTML = getBirthdayText('wood', '木头');
-      }
-
-      updateTimer(); 
-      setInterval(updateTimer, 1000);
-  </script>
-  </body>
+    <script src="js/script.js"></script>
+</body>
 </html>
