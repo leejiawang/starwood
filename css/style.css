@@ -68,18 +68,18 @@ svg {
 }
 .nav {
     text-align: center;
-    height: 145px;
+    height: 140px;
     position: relative;
 }
 .site-logo {
     z-index: 100;
     position: absolute;
     left: 50%;
-    transform: translateX(30%);
+    transform: translateX(-50%);
     top: 15px;
 }
 .site-logo img {
-    width: 150px;
+    width: 80px;
     height: auto;
     display: block;
 }
@@ -270,8 +270,8 @@ svg {
         background: transparent !important;
         box-shadow: none;
         border-radius: 8px;
-        border: 4px dotted #d1d5db;
-        margin-bottom: 12px;
+        border: 3px dotted #d1d5db;
+        margin-bottom: 10px;
         padding: 4px;
         box-sizing: border-box;
         display: flex;
